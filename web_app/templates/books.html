@@ -8,7 +8,18 @@
 <body>
     <h2>Welcome to the Books Page</h2>
 
-    <p>bla bla</p>
+    <p> {{ message }}</p>
+
+    {% if books %}
+        <ul>
+        {% for book in books %}
+            <li>{{ book["title"] }}</li>
+        {% endfor %}
+        </ul>
+
+    {% else %}
+        <p>Books not found.</p>
+    {% endif %}
 
 </body>
 </html>
