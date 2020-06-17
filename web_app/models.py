@@ -15,13 +15,33 @@ class Book(db.Model):
     def __repr__(self):
         return f"<Book {self.id} {self.title}>"
 
-class Tweet(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    text = db.Column(db.String(280))
-    user = db.Column(db.String(15))
 
-    def __repr__(self):
-        return f"<Tweet {self.id} {self.text}>"
+class User(db.Model):
+    id = db.Column(db.BigInteger, primary_key=True)
+    screen_name = db.Column(db.String(128), nullable=False)
+    name = db.Column(db.String)
+    location = db.Column(db.String)
+    followers_count = db.Column(db.Integer)
+    #latest_tweet_id = db.Column(db.BigInteger)
+
+
+
+class Tweet(db.Model):
+    id = db.Column(db.BigInteger, primary_key=True)
+    user_id = db.Column(db.BigInteger, db.ForeignKey("user.id"))
+    full_text = db.Column(db.String(500))
+    embedding = db.Column(db.PickleType)
+
+    user = db.relationship("User", backref=db.backref("tweets", lazy=True))
+
+
+# class Tweet(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     text = db.Column(db.String(280))
+#     user = db.Column(db.String(15))
+
+#     def __repr__(self):
+#         return f"<Tweet {self.id} {self.text}>"
     
 def parse_records(database_records):
     """

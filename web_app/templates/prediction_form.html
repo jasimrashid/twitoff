@@ -1,0 +1,39 @@
+{% extends "bootstrap_layout.html" %}
+
+{% block content %}
+
+    <h2>Prediction Time</h2>
+
+    <p>Use the form below to predict which user is more likely to say a given tweet...</p>
+
+    <form action="/predict" method="POST">
+
+        <!-- TODO: Instead of hard-coding these drop-down menu options, dynamically populate them based on user records from the database -->
+        <label>Twitter User A:</label>
+        <select name="screen_name_a">
+            <option value="tim_cook" selected="true">@tim_cook</option>
+            <option value="jack">@jack</option>
+            <option value="dhh">@dhh</option>
+        </select>
+        <br>
+
+        <!-- TODO: Instead of hard-coding these drop-down menu options, dynamically populate them based on user records from the database -->
+        <label>Twitter User B:</label>
+        <select name="screen_name_b">
+            <option value="tim_cook">@tim_cook</option>
+            <option value="jack" selected="true">@jack</option>
+            <option value="dhh">@dhh</option>
+          </select>
+        <br>
+
+        <label>Tweet Text:</label>
+        <input type="text" name="tweet_text" placeholder="apple is king. steve is god. " value="apple is king. steve is god. ">
+        <br>
+
+        <button>Submit</button>
+    </form>
+
+
+
+
+{% endblock %}
