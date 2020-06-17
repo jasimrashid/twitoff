@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>New Tweet Page</h1>
+
+    <p>Please fill out the form and submit to create a new tweet!</p>
+
+    <form action="/tweets/create" method="POST">
+
+        <label>Text:</label>
+        <input type="text" name="text" placeholder="hello world" value="hello world">
+
+        <label>User:</label>
+        <select name="user">
+          <option value="A1">realdonaldbiden</option>
+          <option value="A2">elonmack</option>
+          <option value="A3">jasimbieber</option>
+          <option value="A4">kristiano</option>
+        </select>
+
+        <button>Submit</button>
+    </form>
+</body>
+</html>

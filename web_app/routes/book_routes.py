@@ -4,6 +4,7 @@ from flask import Blueprint, jsonify, request, render_template #, flash, redirec
 
 from web_app.models import Book, db, parse_records
 book_routes = Blueprint("book_routes", __name__)
+# tweet_routes = Blueprint("tweet_routes", __name__)
 
 @book_routes.route("/books.json")
 def list_books():
@@ -31,6 +32,7 @@ def list_books_for_humans():
     books = parse_records(book_records)
     return render_template("books.html", message="Here's some books", books=books)
 
+
 @book_routes.route("/books/new")
 def new_book():
     return render_template("new_book.html")
@@ -51,3 +53,5 @@ def create_book():
     })
     # flash(f"Book '{new_book.title}' created successfully!", "success")
     # return redirect(f"/books")
+
+
