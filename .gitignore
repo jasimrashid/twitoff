@@ -1,6 +1,6 @@
 # ignore local database stuff
 
-migrations/
+# migrations/
 
 *.db 
 
