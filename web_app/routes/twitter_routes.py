@@ -1,6 +1,6 @@
 # web_app/routes/twitter_routes.py
 
-from flask import Blueprint, render_template, jsonify
+from flask import Blueprint, request, render_template, jsonify
 from web_app.models import db, User, Tweet #, parse_records
 from web_app.services.twitter_service import api as twitter_api_client
 from web_app.services.basilica_service import connection as basilica_api_client
@@ -63,4 +63,30 @@ def fetch_user(screen_name=None):
         # counter+=1
     db.session.commit()
     # return "OK"
+    print('path A')
     return render_template("user.html", user=db_user, tweets=tweets) # tweets=db_tweets
+
+@twitter_routes.route('/users/new')
+def new_user():
+    return render_template("new_user.html")
+
+@twitter_routes.route("/users/create", methods=["POST"])
+def add_user():
+    print("FORM DATA:", dict(request.form))
+    screen_name = request.form["screen_name"]
+    fetch_user(screen_name)
+    # fetch_user(request.form["screen_name"])
+
+    # new_user = User(title=request.form["screen_name"], author_id=request.form["author_name"])
+    # db.session.add(new_book)
+    # db.session.commit()
+
+    # return jsonify({
+    #     "message": "BOOK CREATED OK (TODO)",
+    #     "book": dict(request.form)
+    # })
+    # flash(f"Book '{new_book.title}' created successfully!", "success")
+    # return redirect(f"/books")
+    print('path B')
+
+    return render_template("user.html", screen_name=screen_name) # tweets=db_tweets

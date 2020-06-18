@@ -26,6 +26,25 @@
           </select>
         <br>
 
+         <!-- TODO: Instead of hard-coding these drop-down menu options, dynamically populate them based on user records from the database -->
+         <label>Twitter User C:</label>
+         <select name="screen_name_b">
+             <option selected value='0'>Choose a kind</option>
+             {% for screen_name in screen_names %} 
+                <option value='{{screen_name}}' selected="@jack">@{{screen_name[0]}}</option>
+            {% endfor %}
+           </select>
+         <br>
+
+         <label>Twitter User D:</label>
+         <select name="screen_name_b">
+             <option selected value='0'>Choose a kind</option>
+             {% for screen_name in screen_names %} 
+                <option value='{{screen_name}}' selected="@tim_cook">@{{screen_name[0]}}</option>
+            {% endfor %}
+           </select>
+         <br>
+
         <label>Tweet Text:</label>
         <input type="text" name="tweet_text" placeholder="apple is king. steve is god. " value="apple is king. steve is god. ">
         <br>

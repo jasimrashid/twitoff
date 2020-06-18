@@ -32,11 +32,11 @@ def list_tweets_for_humans():
     return render_template("tweets.html", message="Here's some tweets", tweets=tweets)
 
 @twit_routes.route("/tweets/new")
-def new_tweet():
-    return render_template("new_tweet.html")
+def new_user():
+    return render_template("new_user.html")
 
 @twit_routes.route("/tweets/create", methods=["POST"])
-def create_tweet():
+def add_user():
     print("FORM DATA:", dict(request.form))
 
     # breakpoint()

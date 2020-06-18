@@ -14,8 +14,7 @@ class Book(db.Model):
 
     def __repr__(self):
         return f"<Book {self.id} {self.title}>"
-
-
+        
 class User(db.Model):
     id = db.Column(db.BigInteger, primary_key=True)
     screen_name = db.Column(db.String(128), nullable=False)
@@ -23,8 +22,6 @@ class User(db.Model):
     location = db.Column(db.String)
     followers_count = db.Column(db.Integer)
     #latest_tweet_id = db.Column(db.BigInteger)
-
-
 
 class Tweet(db.Model):
     id = db.Column(db.BigInteger, primary_key=True)

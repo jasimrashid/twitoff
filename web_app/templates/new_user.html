@@ -1,0 +1,19 @@
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "new_book" %}
+
+{% block content %}
+
+    <h1>New twitter user</h1>
+
+    <p>Please ensure that the twitter user name is valid</p>
+
+    <form action="/users/create" method="POST">
+
+        <label>User Handle:</label>
+        <input type="text" name="screen_name" placeholder="Book XYZ" value="Book XYZ">
+
+        
+        <button>Submit</button>
+    </form>
+
+{% endblock %}
