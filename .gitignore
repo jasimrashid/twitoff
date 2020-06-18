@@ -6,4 +6,4 @@ migrations/
 
 # ignore secret credentials
 
-.envw
+# .env
