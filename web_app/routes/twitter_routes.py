@@ -14,6 +14,7 @@ def fetch_user(screen_name=None):
 
     # FETCH DATA FROM TWITTER API
     twitter_user = twitter_api_client.get_user(screen_name)
+    breakpoint()
     # tweets = twitter_api_client.user_timeline(screen_name, tweet_mode="extended", count=150, exclude_replies=True, include_rts=False)
     # print("TWEETS COUNT:", len(tweets))
     #return jsonify({"user": user._json, "tweets": [s._json for s in statuses]})

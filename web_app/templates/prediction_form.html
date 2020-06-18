@@ -8,30 +8,30 @@
 
     <form action="/predict" method="POST">
 
-        <!-- TODO: Instead of hard-coding these drop-down menu options, dynamically populate them based on user records from the database -->
-        <label>Twitter User A:</label>
+        TODO: Instead of hard-coding these drop-down menu options, dynamically populate them based on user records from the database
+        <!-- <label>Twitter User A:</label>
         <select name="screen_name_a">
             <option value="tim_cook" selected="true">@tim_cook</option>
             <option value="jack">@jack</option>
             <option value="dhh">@dhh</option>
         </select>
-        <br>
+        <br> -->
 
         <!-- TODO: Instead of hard-coding these drop-down menu options, dynamically populate them based on user records from the database -->
-        <label>Twitter User B:</label>
+        <!-- <label>Twitter User B:</label>
         <select name="screen_name_b">
             <option value="tim_cook">@tim_cook</option>
             <option value="jack" selected="true">@jack</option>
             <option value="dhh">@dhh</option>
           </select>
-        <br>
+        <br> -->
 
          <!-- TODO: Instead of hard-coding these drop-down menu options, dynamically populate them based on user records from the database -->
          <label>Twitter User C:</label>
-         <select name="screen_name_b">
+         <select name="screen_name_a">
              <option selected value='0'>Choose a kind</option>
              {% for screen_name in screen_names %} 
-                <option value='{{screen_name}}' selected="@jack">@{{screen_name[0]}}</option>
+                <option value='{{screen_name[0]}}' selected="@jack">@{{screen_name[0]}}</option>
             {% endfor %}
            </select>
          <br>
@@ -40,7 +40,7 @@
          <select name="screen_name_b">
              <option selected value='0'>Choose a kind</option>
              {% for screen_name in screen_names %} 
-                <option value='{{screen_name}}' selected="@tim_cook">@{{screen_name[0]}}</option>
+                <option value='{{screen_name[0]}}' selected="@tim_cook">@{{screen_name[0]}}</option>
             {% endfor %}
            </select>
          <br>
